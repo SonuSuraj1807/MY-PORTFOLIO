@@ -153,3 +153,13 @@ window.addEventListener("scroll", () => {
   const scrollPercent = (scrollTop / docHeight) * 100;
   progressBar.style.width = `${scrollPercent}%`;
 });
+const heroImage = document.querySelector(".hero-image img");
+
+window.addEventListener("mousemove", e => {
+  if (!heroImage) return;
+
+  const x = (window.innerWidth / 2 - e.clientX) / 40;
+  const y = (window.innerHeight / 2 - e.clientY) / 40;
+
+  heroImage.style.transform = `translate(${x}px, ${y}px) scale(1.03)`;
+});
