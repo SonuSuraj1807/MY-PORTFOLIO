@@ -723,3 +723,79 @@ body.light #scroll-progress {
     #a855f7
   );
 }
+/* =========================
+   CARD MICRO INTERACTIONS
+========================= */
+
+.project-card,
+.edu-card,
+.resume-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.project-card:hover,
+.edu-card:hover,
+.resume-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 18px 40px rgba(168, 85, 247, 0.25);
+}
+/* =========================
+   BUTTON GLOW EFFECT
+========================= */
+
+.project-links a,
+.resume-btn,
+.side-nav a {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-links a::after,
+.resume-btn::after,
+.side-nav a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(255,255,255,0.25),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-links a:hover::after,
+.resume-btn:hover::after,
+.side-nav a:hover::after {
+  opacity: 1;
+}
+/* =========================
+   ACCESSIBILITY FOCUS
+========================= */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+/* =========================
+   SECTION DIVIDER
+========================= */
+
+.section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 60%;
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(168,85,247,0.4),
+    transparent
+  );
+}
