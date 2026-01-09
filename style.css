@@ -357,6 +357,20 @@ body.light .side-nav a.active {
   transform: translateY(-4px);
 }
 
+/* =========================
+   WHATSAPP ICON (SOCIAL BAR)
+========================= */
+
+.social-bar a.whatsapp {
+  color: #25D366; /* WhatsApp green */
+}
+
+.social-bar a.whatsapp:hover {
+  color: #1ebe5d;
+  transform: translateX(6px);
+}
+
+
 /* ======================================================
    ABOUT (WHO AM I)
 ====================================================== */
