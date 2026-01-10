@@ -130,6 +130,21 @@ body.loading {
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
+.loader-text {
+  margin-top: 18px;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  color: var(--accent);
+  opacity: 0.8;
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
+
 
 @keyframes spin {
   to {
@@ -138,34 +153,62 @@ body.loading {
 }
 
 /* =========================
-   SIDE NAV — TAG STYLE
+   SIDE NAV — COMPACT & CLEAN
 ========================= */
+
 .side-nav {
   position: fixed;
-  right: 24px;
+  right: 12px;          /* ⬅ move it closer to edge */
   top: 50%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 10px;            /* ⬅ tighter spacing */
   z-index: 2000;
 }
 
+/* nav pill */
 .side-nav a {
-  padding: 8px 16px;
+  min-width: 90px;      /* ⬅ smaller width */
+  padding: 6px 14px;    /* ⬅ smaller padding */
+  font-size: 0.78rem;   /* ⬅ smaller text */
+  text-align: center;
+
   border-radius: 999px;
-  font-size: 0.85rem;
   text-decoration: none;
   color: var(--text);
+
   background: rgba(168, 85, 247, 0.12);
   border: 1px solid rgba(168, 85, 247, 0.35);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
 
   transition:
-    transform 0.3s ease,
-    background 0.3s ease,
-    color 0.3s ease,
-    box-shadow 0.3s ease;
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* hover */
+.side-nav a:hover {
+  transform: translateX(-6px);
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(168, 85, 247, 0.4);
+}
+
+/* active */
+.side-nav a.active {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 0 16px rgba(168, 85, 247, 0.6);
+}
+
+/* hide on mobile */
+@media (max-width: 900px) {
+  .side-nav {
+    display: none;
+  }
 }
 
 /* Hover animation */
@@ -250,6 +293,8 @@ body.light .side-nav a.active {
   margin-bottom: 50px;
   color: var(--accent);
 }
+
+
 
 /* ======================================================
    HERO SECTION
@@ -355,45 +400,67 @@ body.light .side-nav a.active {
 .social-bar a:hover {
   color: var(--accent);
   transform: translateY(-4px);
-}
-
-/* =========================
-   WHATSAPP ICON (SOCIAL BAR)
-========================= */
-
-.social-bar a.whatsapp {
-  color: #25D366; /* WhatsApp green */
-}
-
-.social-bar a.whatsapp:hover {
-  color: #1ebe5d;
-  transform: translateX(6px);
-}
-
+}*/
 
 /* ======================================================
-   ABOUT (WHO AM I)
+   ABOUT (WHO AM I) – FINAL, CORRECT
 ====================================================== */
+
+#about.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+#about .container {
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* TITLE */
+.about-title {
+  font-size: 2.6rem;
+  color: var(--accent);
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* GLASS CARD */
 .about-card {
   background: var(--glass);
   padding: 50px;
   border-radius: 24px;
   max-width: 900px;
-  margin: auto;
-  text-align: center;
+  width: 100%;
   border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 40px rgba(168, 85, 247, 0.18);
+  text-align: center;
 }
 
-.about-card h2 {
-  font-size: 2.2rem;
-  margin-bottom: 22px;
-  color: var(--accent);
-}
-
+/* TEXT */
 .about-card p {
   color: #ccc;
   line-height: 1.75;
 }
+
+.about-card p:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+/* LIGHT THEME */
+body.light .about-card {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+body.light .about-card p {
+  color: #333;
+}
+
 
 /* =========================
    PROJECTS SECTION
@@ -502,6 +569,38 @@ body.light .side-nav a.active {
 /* LIGHT THEME FIX */
 body.light .project-card p {
   color: #333;
+}
+
+/* =========================
+   BUTTON GLOW EFFECT
+========================= */
+
+.project-links a,
+.resume-btn,
+.side-nav a {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-links a::after,
+.resume-btn::after,
+.side-nav a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(255,255,255,0.25),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-links a:hover::after,
+.resume-btn:hover::after,
+.side-nav a:hover::after {
+  opacity: 1;
 }
 
 
@@ -690,6 +789,104 @@ body.light .bar span em {
   transform: translateY(0);
 }
 
+/* =========================
+   CONTACT FORM
+========================= */
+
+.contact-form {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px;
+  background: var(--glass);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* FORM GROUP */
+.contact-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* LABEL */
+.contact-form label {
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+  color: var(--text);
+  opacity: 0.85;
+}
+
+/* INPUT & TEXTAREA */
+.contact-form input,
+.contact-form textarea {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 12px 14px;
+  font-size: 0.9rem;
+  color: var(--text);
+  outline: none;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* PLACEHOLDER */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #aaa;
+}
+
+/* FOCUS STATE */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.25);
+}
+
+/* SUBMIT BUTTON */
+.contact-btn {
+  align-self: flex-start;
+  padding: 12px 28px;
+  border-radius: 999px;
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* BUTTON HOVER */
+.contact-btn:hover {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.35);
+}
+
+/* =========================
+   LIGHT THEME FIX
+========================= */
+
+body.light .contact-form {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+body.light .contact-form input,
+body.light .contact-form textarea {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.15);
+  color: #111;
+}
+
+body.light .contact-form input::placeholder,
+body.light .contact-form textarea::placeholder {
+  color: #666;
+}
+
+
 /* ======================================================
    RESPONSIVE
 ====================================================== */
@@ -740,7 +937,6 @@ body.light #scroll-progress {
 /* =========================
    CARD MICRO INTERACTIONS
 ========================= */
-
 .project-card,
 .edu-card,
 .resume-card {
@@ -753,37 +949,7 @@ body.light #scroll-progress {
   transform: translateY(-8px) scale(1.01);
   box-shadow: 0 18px 40px rgba(168, 85, 247, 0.25);
 }
-/* =========================
-   BUTTON GLOW EFFECT
-========================= */
 
-.project-links a,
-.resume-btn,
-.side-nav a {
-  position: relative;
-  overflow: hidden;
-}
-
-.project-links a::after,
-.resume-btn::after,
-.side-nav a::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at center,
-    rgba(255,255,255,0.25),
-    transparent 60%
-  );
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.project-links a:hover::after,
-.resume-btn:hover::after,
-.side-nav a:hover::after {
-  opacity: 1;
-}
 /* =========================
    ACCESSIBILITY FOCUS
 ========================= */
@@ -812,4 +978,415 @@ button:focus-visible {
     rgba(168,85,247,0.4),
     transparent
   );
+}
+
+/* =========================
+   CONTACT FORM HOVER FIX (FORCED)
+========================= */
+
+.contact-form {
+  transition: transform 0.35s ease, box-shadow 0.35s ease !important;
+}
+
+.contact-form:hover {
+  transform: translateY(-8px) scale(1.01) !important;
+  box-shadow: 0 18px 40px rgba(168, 85, 247, 0.35) !important;
+}
+
+.contact-form {
+  pointer-events: auto;
+}
+
+/* =========================
+   SOCIAL ICONS + TOOLTIPS
+========================= */
+
+.social-icons {
+  display: flex;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.social-link {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  transition: all 0.35s ease;
+}
+
+.social-link:hover {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 0 18px rgba(168,85,247,0.6);
+  transform: translateY(-4px);
+}
+
+/* TOOLTIP */
+.social-link::after,
+.whatsapp-float::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  background: rgba(0,0,0,0.85);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 14px;
+  font-size: 0.7rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+  white-space: nowrap;
+}
+
+.social-link:hover::after,
+.whatsapp-float:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+/* =========================
+   WHATSAPP FLOAT BUTTON
+========================= */
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  width: 54px;
+  height: 54px;
+  background: #25D366;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+  box-shadow: 0 0 20px rgba(37,211,102,0.6);
+  animation: whatsapp-pulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.08);
+}
+
+/* Pulse animation */
+@keyframes whatsapp-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); }
+  70% { box-shadow: 0 0 0 18px rgba(37,211,102,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+
+/* ======================================================
+   INTERNSHIPS
+====================================================== */
+
+.internship-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.intern-card {
+  background: var(--glass);
+  padding: 34px;
+  border-radius: 24px;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.intern-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(168,85,247,0.35);
+}
+
+.intern-card h3 {
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.intern-card .company {
+  font-size: 0.9rem;
+  color: #ddd;
+}
+
+.intern-card .duration {
+  font-size: 0.75rem;
+  color: #aaa;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.intern-card .desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+body.light .cert-card p,
+body.light .intern-card .desc {
+  color: #333;
+}
+/* CERTIFICATE CARD SCROLL ANIMATION */
+.cert-card.fade-up {
+  opacity: 0;
+  transform: translateY(30px) scale(0.97);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+/* =========================
+   CONNECT WITH ME LABEL
+========================= */
+.connect-label {
+  margin-top: 22px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: #aaa;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* =========================
+   TYPING EFFECT
+========================= */
+.typing-text {
+  opacity: 0;
+}
+
+.typing-text.visible {
+  opacity: 1;
+}
+.hero {
+  opacity: 1 !important;
+  transform: none !important;
+}
+.hero-title {
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+
+.hero-name {
+  color: var(--accent);
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+/* =========================
+   INTERNSHIP BRAND ICONS
+========================= */
+
+.intern-icons {
+  margin-left: 10px;
+  display: inline-flex;
+  gap: 8px;
+  vertical-align: middle;
+}
+
+.intern-icons i {
+  font-size: 1rem;
+  color: #aaa;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Glow on card hover */
+.intern-card:hover .intern-icons i {
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+/* Light mode support */
+body.light .intern-icons i {
+  color: #666;
+}
+/* ===========================
+   CERTIFICATIONS (FINAL)
+=========================== */
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.cert-card {
+  background: var(--glass);
+  padding: 32px;
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,0.08);
+
+  display: flex;
+  flex-direction: column;
+
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 20px 45px rgba(168,85,247,0.45);
+}
+
+.cert-card h3 {
+  color: var(--accent);
+  font-size: 1.05rem;
+  margin-bottom: 18px;
+}
+
+.cert-card .issuer {
+  font-size: 0.9rem;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+/* BUTTON WRAPPER */
+.cert-actions {
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  padding-top: 8px;
+}
+
+/* BUTTONS */
+.cert-actions button,
+.cert-actions a {
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.25s ease;
+}
+
+/* HOVER + GLOW */
+.cert-actions button:hover,
+.cert-actions a:hover {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 0 18px rgba(168,85,247,0.6);
+  transform: translateY(-2px);
+}
+
+/* FADE-UP */
+.cert-card.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.cert-card.fade-up.visible {
+  opacity: 1;
+  transform: translateY(1);
+}
+
+/* MODAL */
+.cert-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.cert-modal.active {
+  display: flex;
+}
+
+.cert-modal-content {
+  width: 85%;
+  max-width: 900px;
+  height: 85%;
+  background: #000;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.cert-modal iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.cert-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  z-index: 10001; /* 🔑 higher than iframe */
+  
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.cert-close:hover {
+  background: var(--accent);
+  transform: scale(1.1);
+}
+
+.cert-modal iframe {
+  position: relative;
+  z-index: 1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .cert-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.cert-card:hover {
+  transform: translateY(-6px) scale(1.02);
 }
