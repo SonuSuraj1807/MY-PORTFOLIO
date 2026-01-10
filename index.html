@@ -5,20 +5,10 @@
   <title>Suraj Rao | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ABCD1234XY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-4DXDVWKEQ1');
-</script>
-
-  
 <body class="loading">
 <!-- SCROLL PROGRESS BAR -->
 <div id="scroll-progress"></div>
@@ -36,9 +26,11 @@
 <aside class="side-nav">
   <a href="#home" class="active">Home</a>
   <a href="#about">About</a>
+  <a href="#education">Education</a>
   <a href="#projects">Projects</a>
   <a href="#skills">Skills</a>
-  <a href="#education">Education</a>
+  <a href="#internships">Internships</a>  
+  <a href="#certifications">Certifications</a>
   <a href="#resume">Resume</a>
   <a href="#contact">Contact</a>
 </aside>
@@ -50,36 +42,44 @@
   <div class="hero-wrapper">
 
     <div class="hero-image">
-      <img src="profile.png" alt="Suraj Rao">
+      <img src="images/profile.png" alt="Suraj Rao">
     </div>
 
     <div class="hero-text">
-      <h1>Hi, I’m <span>Suraj Rao</span></h1>
-      <h2>A Data Science Student</h2>
-      <p>
-        From Vignana Bharathi Institute of Technology, Hyderabad, Telangana, India.<br>
-        Building intelligent solutions using data, analytics, and modern technologies.
-      </p>
+  <h1 class="hero-title">
+  <span id="typing-text"></span>
+  <span class="hero-name">Suraj Rao</span>
+</h1>
 
-      <div class="hero-tags">
-        <span>Data Analysis</span>
-        <span>Machine Learning</span>
-        <span>Problem Solving</span>
-        <span>Web Development</span>
-        <span>AI Enthusiast</span>
-      </div>
+  <h2 class="hero-subtitle">A Data Science Student</h2>
 
+  <p class="hero-desc">
+    From Vignana Bharathi Institute of Technology, Hyderabad, Telangana, India.<br>
+    Building intelligent solutions using data, analytics, and modern technologies.
+  </p>
+
+  <div class="hero-tags hidden">
+    <span>Data Analysis</span>
+    <span>Machine Learning</span>
+    <span>Problem Solving</span>
+    <span>Web Development</span>
+    <span>AI Enthusiast</span>
+  </div>
+      <p class="connect-label">Connect with me</p>
       <!-- SOCIAL BAR -->
       <div class="social-bar">
         <a href="https://www.linkedin.com/in/suraj-rao-kommu/" target="_blank"><i class="fab fa-linkedin"></i></a>
         <a href="https://github.com/SonuSuraj1807" target="_blank"><i class="fab fa-github"></i></a>
         <a href="mailto:sonusuraj1807@gmail.com"><i class="fas fa-envelope"></i></a>
         <a href="https://wa.me/918790172500?text=Hi%20Suraj,%20I%20saw%20your%20portfolio"
-   target="_blank"
-   aria-label="WhatsApp"
-   class="whatsapp">
-  <i class="fab fa-whatsapp"></i>
-</a>
+        target="_blank"
+        aria-label="WhatsApp"
+        class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+
+        <a href="https://www.instagram.com/sonu_suraj_"
+        target="_blank"
+        aria-label="Instagram"
+        class="instagram"><i class="fab fa-instagram"></i></a>
 
       </div>
     </div>
@@ -89,26 +89,70 @@
 
 <!-- ABOUT -->
 <section id="about" class="section fade-up">
-  <div class="container about-card">
-    <h2>Who Am I?</h2>
-    <p>
-      I am Suraj Rao, a 20-year-old student pursuing a degree in Data Science at
-      Vignana Bharathi Institute of Technology (VBIT). Known for my analytical mindset
-      and passion for technology, I am dedicated to mastering data analysis,
-      machine learning, and artificial intelligence.
-      <br><br>
-      I have distinguished myself through a commitment to academic excellence and
-      active participation in various projects and research initiatives. My coursework
-      and hands-on experience have equipped me with a strong foundation in programming
-      languages such as Python and C, as well as expertise in data visualization,
-      statistical analysis, and predictive modeling.
-      <br><br>
-      Beyond academics, I am an enthusiastic member of the Data Science Club, where
-      I collaborate with peers on innovative projects, participate in hackathons,
-      and engage in continuous learning. My future aspirations include contributing
-      to the field of data science, with a keen interest in big data analytics and its
-      applications in healthcare and finance.
-    </p>
+  <div class="container">
+
+    <!-- TITLE OUTSIDE CARD -->
+    <h2 class="section-title about-title">Who Am I?</h2>
+
+    <!-- CARD -->
+    <div class="about-card">
+      <p>
+        I am Suraj Rao, a 21-year-old student pursuing a degree in Data Science
+        at Vignana Bharathi Institute of Technology (VBIT). Known for my analytical
+        mindset and passion for technology, I am dedicated to mastering data
+        analysis, machine learning, and artificial intelligence.
+      </p>
+
+      <p>
+        I have distinguished myself through a commitment to academic excellence
+        and active participation in various projects and research initiatives.
+        My coursework and hands-on experience have equipped me with a strong
+        foundation in programming languages such as Python and C, as well as
+        expertise in data visualization, statistical analysis, and predictive
+        modeling.
+      </p>
+
+      <p>
+        Beyond academics, I am an enthusiastic member of the IEEE student branch at VBIT,
+        where I collaborate with peers on innovative projects, participate in
+        hackathons, and engage in continuous learning. My future aspirations
+        include contributing to the field of data science, with a keen interest
+        in big data analytics and its applications in healthcare and finance.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="section fade-up">
+  <div class="container education-wrapper">
+    <h2 class="section-title">Education</h2>
+
+    <div class="edu-card">
+      <h3>B.Tech – Data Science</h3>
+      <span>2023 – Present</span>
+      <p>
+        Pursuing undergraduate studies in Data Science at Vignana Bharathi Institute
+        of Technology with a strong focus on analytics, machine learning, and
+        real-world applications.
+      </p>
+      <p><strong>Current CGPA:</strong> 7.8 / 10</p>
+    </div>
+
+    <div class="edu-card">
+      <h3>Higher Secondary (12th)</h3>
+      <span>2021 – 2023</span>
+      <p>At Nano Junior College, Hyderabad, Telangana – 500030.</p>
+    </div>
+
+    <div class="edu-card">
+      <h3>Secondary School (10th)</h3>
+      <span>2020 – 2021</span>
+      <p>At Ekashila Public School, Jangaon, Telangana – 506167.</p>
+      <p><strong>CGPA:</strong> 9.8 / 10</p>
+    </div>
+
   </div>
 </section>
 
@@ -123,7 +167,7 @@
       <div class="project-card fade-up">
 
         <div class="project-image">
-          <img src="project1.png" alt="Diet Plan Generator">
+          <img src="images/project1.png" alt="Diet Plan Generator">
         </div>
 
         <h3>Diet Plan Generator</h3>
@@ -151,7 +195,7 @@
       <div class="project-card fade-up">
 
         <div class="project-image">
-          <img src="project2.png" alt="Brain Tumor Detection">
+          <img src="images/project2.png" alt="Brain Tumor Detection">
         </div>
 
         <h3>Brain Tumor Detection Using X-Ray Images</h3>
@@ -179,7 +223,7 @@
       <div class="project-card fade-up">
 
         <div class="project-image">
-          <img src="project3.png" alt="Automated Ordering GenAI">
+          <img src="images/project3.png" alt="Automated Ordering GenAI">
         </div>
 
         <h3>Automated Online Ordering System using GenAI</h3>
@@ -263,38 +307,168 @@
   </div>
 </section>
 
+<!-- INTERNSHIPS -->
+<section id="internships" class="section fade-up">
+  <div class="container">
+    <h2 class="section-title">Internships</h2>
 
-<!-- EDUCATION -->
-<section id="education" class="section fade-up">
-  <div class="container education-wrapper">
-    <h2 class="section-title">Education</h2>
+    <div class="internship-wrapper">
 
-    <div class="edu-card">
-      <h3>B.Tech – Data Science</h3>
-      <span>2023 – Present</span>
-      <p>
-        Pursuing undergraduate studies in Data Science at Vignana Bharathi Institute
-        of Technology with a strong focus on analytics, machine learning, and
-        real-world applications.
-      </p>
-      <p><strong>Current CGPA:</strong> 7.8 / 10</p>
+      <!-- ANDROID INTERNSHIP -->
+      <div class="intern-card">
+        <h3>
+          Virtual Internship: Android Developer
+          <span class="intern-icons">
+            <i class="fab fa-google" title="Google for Developers"></i>
+          </span>
+        </h3>
+
+        <p class="company">
+          AICTE – EduSkills
+        </p>
+
+        <span class="duration">
+          April 2024 – June 2024 (10 Weeks)
+        </span>
+
+        <p class="desc">
+          Completed a virtual internship as an Android Developer under AICTE – EduSkills,
+          supported by Google for Developers. Gained hands-on exposure to Android
+          application development, UI design, activity lifecycle management,
+          and modern mobile development practices.
+        </p>
+      </div>
+
+      <!-- DATA ENGINEERING INTERNSHIP -->
+      <div class="intern-card">
+        <h3>
+          Virtual Internship: Data Engineering
+          <span class="intern-icons">
+            <i class="fab fa-aws" title="AWS Academy"></i>
+          </span>
+        </h3>
+
+        <p class="company">
+          AICTE – EduSkills
+        </p>
+
+        <span class="duration">
+          January 2025 – March 2025 (10 Weeks)
+        </span>
+
+        <p class="desc">
+          Completed a virtual internship in Data Engineering under AICTE – EduSkills,
+          supported by AWS Academy. Acquired practical knowledge in data pipelines,
+          cloud-based data services, ETL processes, and foundational data
+          engineering concepts using AWS tools.
+        </p>
+      </div>
+      <!-- ALTAIR DATA SCIENCE MASTER INTERNSHIP -->
+      <div class="intern-card">
+        <h3>
+          Virtual Internship: Altair Data Science Master
+          <span class="intern-icons">
+            <i class="fab fa-altair" title="Altair"></i>
+          </span>
+        </h3>
+
+        <p class="company">
+          AICTE – EduSkills
+        </p>
+
+        <span class="duration">
+          January 2025 – March 2025 (10 Weeks)
+        </span>
+
+        <p class="desc">
+          Completed a virtual internship in Altair Data Science Master under AICTE – EduSkills,
+          supported by Altair. Acquired practical knowledge in data pipelines,
+          cloud-based data services, ETL processes, and foundational data
+          engineering concepts using AWS tools.
+        </p>
+      </div>
+
+
     </div>
-
-    <div class="edu-card">
-      <h3>Higher Secondary (12th)</h3>
-      <span>2021 – 2023</span>
-      <p>At Nano Junior College, Hyderabad, Telangana – 500030.</p>
-    </div>
-
-    <div class="edu-card">
-      <h3>Secondary School (10th)</h3>
-      <span>2020 – 2021</span>
-      <p>At Ekashila Public School, Jangaon, Telangana – 506167.</p>
-      <p><strong>CGPA:</strong> 9.8 / 10</p>
-    </div>
-
   </div>
 </section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications" class="section fade-up">
+  <div class="container">
+    <h2 class="section-title">Certifications</h2>
+
+    <div class="cert-grid">
+
+      <!-- CERT 1 -->
+      <div class="cert-card fade-up">
+        <h3>Virtual Internship: Android Developer</h3>
+        <p class="issuer">AICTE · EduSkills | Supported by Google for Developers</p>
+
+        <div class="cert-actions">
+          <button class="view-cert" data-pdf="certificates/android_internship.pdf">
+            View Certificate
+          </button>
+
+          <a
+            class="download-cert"
+            href="certificates/android_internship.pdf"
+            download>
+            Download
+          </a>
+        </div>
+      </div>
+
+      <!-- CERT 2 -->
+      <div class="cert-card fade-up">
+        <h3>Virtual Internship: AWS Data Engineering</h3>
+        <p class="issuer">AICTE · EduSkills | Supported by AWS Academy</p>
+
+        <div class="cert-actions">
+          <button class="view-cert" data-pdf="certificates/aws_data_engineering.pdf">
+            View Certificate
+          </button>
+
+          <a
+            class="download-cert"
+            href="certificates/aws_data_engineering.pdf"
+            download>
+            Download
+          </a>
+        </div>
+      </div>
+
+      <!-- CERT 3 -->
+      <div class="cert-card fade-up">
+        <h3>Virtual Internship: Altair Data Science Master</h3>
+        <p class="issuer">AICTE · EduSkills | Supported by Altair</p>
+
+        <div class="cert-actions">
+          <button class="view-cert" data-pdf="certificates/altair_internship.pdf">
+            View Certificate
+          </button>
+
+          <a
+            class="download-cert"
+            href="certificates/altair_internship.pdf"
+            download>
+            Download
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATE MODAL -->
+<div class="cert-modal" id="certModal">
+  <div class="cert-modal-content">
+    <button class="cert-close" aria-label="Close certificate">×</button>
+    <iframe id="certFrame"></iframe>
+  </div>
+</div>
+
 
 <!-- RESUME -->
 <section id="resume" class="section fade-up">
@@ -305,15 +479,83 @@
         A Data Science student with hands-on experience in data analysis,
         machine learning, and modern data-driven applications.
       </p>
-      <a href="Suraj_Rao_Resume.pdf" download class="resume-btn">
+      <a href="resume/Suraj_Rao_Resume.pdf" download class="resume-btn">
         <i class="fas fa-download"></i> Download Resume
       </a>
     </div>
   </div>
 </section>
 
+<!-- CONTACT -->
+<section id="contact" class="section fade-up">
+  <div class="container">
+    <h2 class="section-title">Contact Me</h2>
+
+    <form 
+      class="contact-form"
+      action="https://formspree.io/f/xpqqawkv"
+      method="POST"
+    >
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input 
+          type="text" 
+          id="name" 
+          name="name" 
+          placeholder="Your name"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          placeholder="Your email"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea 
+          id="message" 
+          name="message" 
+          rows="5"
+          placeholder="Your message"
+          required
+        ></textarea>
+      </div>
+
+      <button type="submit" class="contact-btn">
+        Send Message
+      </button>
+    </form>
+  </div>
+</section>
+
+
 </main>
 
-<script src="script.js"></script>
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/918790172500?text=Hi%20Suraj,%20I%20saw%20your%20portfolio"
+   class="whatsapp-float"
+   target="_blank"
+   data-tooltip="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- CERTIFICATE MODAL -->
+<div id="cert-modal" class="cert-modal">
+  <div class="cert-modal-content">
+    <span class="cert-close">&times;</span>
+    <iframe id="cert-frame"></iframe>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+
 </body>
 </html>
