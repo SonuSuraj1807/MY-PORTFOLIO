@@ -187,6 +187,12 @@ body.loading {
   gap: 14px;
   z-index: 2000;
 }
+/* Hide side nav on tablets & mobile */
+@media (max-width: 1024px) {
+  .side-nav {
+    display: none;
+  }
+}
 
 /* nav pill */
 .side-nav a {
@@ -1514,4 +1520,27 @@ html {
   .main-content {
     padding-right: 0;
   }
+}
+@media (min-width: 1025px) {
+  .section,
+  .container {
+    padding-right: 140px; /* space for side-nav */
+  }
+}
+@media (max-width: 768px) {
+  .theme-toggle {
+    top: 14px;
+    right: 14px;
+    transform: none;
+  }
+}
+.section {
+  display: flex;
+  justify-content: center;
+}
+
+.section > .container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
 }
