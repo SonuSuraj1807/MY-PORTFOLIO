@@ -205,7 +205,7 @@ body.loading {
 }
 
 /* hide on mobile */
-@media (max-width: 900px) {
+@media (max-width: 700px) {
   .side-nav {
     display: none;
   }
