@@ -1475,3 +1475,43 @@ html {
     line-height: 1.6;
   }
 }
+/* ======================================
+   FINAL LAYOUT OVERRIDES (DO NOT MOVE)
+====================================== */
+
+/* Protect content from side-nav */
+.section,
+.hero,
+.main-content {
+  padding-right: 180px;
+  box-sizing: border-box;
+}
+
+/* TRUE CENTERING FIX */
+.section > .container,
+.hero > .container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Center all grids & wrappers */
+.cert-grid,
+.project-grid,
+.internship-wrapper,
+.education-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* MOBILE RESET */
+@media (max-width: 900px) {
+  .side-nav {
+    display: none;
+  }
+
+  .section,
+  .hero,
+  .main-content {
+    padding-right: 0;
+  }
+}
