@@ -1390,3 +1390,75 @@ html {
 .cert-card:hover {
   transform: translateY(-6px) scale(1.02);
 }
+
+/* =========================
+   MOBILE FIXES (GLOBAL)
+========================= */
+@media (max-width: 768px) {
+
+  /* Prevent horizontal overflow */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Reduce section padding */
+  .section {
+    padding: 70px 18px;
+  }
+
+  /* Headings scale */
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  /* =========================
+     CERTIFICATIONS — MOBILE
+  ========================= */
+  .cert-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .cert-card {
+    padding: 24px;
+    border-radius: 18px;
+  }
+
+  .cert-card h3 {
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+
+  .cert-card .issuer {
+    font-size: 0.85rem;
+    margin-bottom: 16px;
+  }
+
+  .cert-actions {
+    gap: 12px;
+  }
+
+  .cert-actions button,
+  .cert-actions a {
+    height: 40px;
+    font-size: 0.8rem;
+  }
+
+  /* =========================
+     INTERNSHIPS — MOBILE
+  ========================= */
+  .intern-card {
+    padding: 24px;
+    border-radius: 18px;
+  }
+
+  .intern-card h3 {
+    font-size: 1rem;
+  }
+
+  .intern-card .desc {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+}
