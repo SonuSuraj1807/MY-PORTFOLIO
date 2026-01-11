@@ -74,6 +74,16 @@ body {
   overflow-x: hidden;
 }
 
+/* =========================
+   GLOBAL CONTENT OFFSET
+========================= */
+.main-content,
+.hero,
+.section {
+  padding-right: 180px; /* space for side-nav */
+}
+
+
 /* ======================================================
    THEME TOGGLE (TOP RIGHT)
 ====================================================== */
@@ -100,6 +110,7 @@ body {
     z-index: 3000;
   }
 }
+
 
 #theme-toggle:hover {
   background: var(--accent);
@@ -167,12 +178,13 @@ body.loading {
 
 .side-nav {
   position: fixed;
-  right: 12px;          /* ⬅ move it closer to edge */
+  right: 24px;
   top: 50%;
   transform: translateY(-50%);
+  width: 100px; /* 🔑 fixed width */
   display: flex;
   flex-direction: column;
-  gap: 10px;            /* ⬅ tighter spacing */
+  gap: 14px;
   z-index: 2000;
 }
 
@@ -214,7 +226,7 @@ body.loading {
 }
 
 /* hide on mobile */
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   .side-nav {
     display: none;
   }
@@ -248,6 +260,7 @@ body.light .side-nav a:hover,
 body.light .side-nav a.active {
   color: #fff;
 }
+
 
 /* =========================
    LIGHT THEME SIDE NAV FIX
@@ -312,7 +325,7 @@ body.light .side-nav a.active {
 
 .hero-wrapper {
   width: 100%;
-  max-width: 1024px;
+  max-width: 1000px;
   margin: auto;
   display: grid;
   grid-template-columns: 1.2fr 1fr;
