@@ -1545,105 +1545,48 @@ html {
   margin: auto;
 }
 /* =====================================================
-   FINAL GLOBAL RESPONSIVE FIX — DO NOT EDIT
+   FINAL SAFE RESPONSIVE FIX (NAV + MOBILE)
+   ✔ No layout break
+   ✔ No card shifting
 ===================================================== */
 
-/* -------------------------------
-   DESKTOP: reserve space for side nav
--------------------------------- */
+/* ---------- DESKTOP (keep side nav) ---------- */
 @media (min-width: 1025px) {
-  .section,
-  .container {
-    padding-right: 150px;
+  .side-nav {
+    right: 20px;
+    width: auto;
   }
 }
 
-/* -------------------------------
-   MOBILE + MOBILE DESKTOP VIEW
-   Hide side nav completely
--------------------------------- */
+/* ---------- MOBILE & MOBILE DESKTOP VIEW ---------- */
 @media (max-width: 1024px) {
+
+  /* Hide side nav ONLY on mobile */
   .side-nav {
     display: none !important;
   }
 
-  .section,
-  .container {
-    padding-right: 0 !important;
-    padding-left: 0 !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+  /* Prevent content overflow */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Keep everything centered */
+  .container,
+  .section {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
-/* -------------------------------
-   FORCE CENTER ALL CARD GRIDS
--------------------------------- */
-.cert-grid,
-.projects-grid,
-.internship-wrapper,
-.skills-grid {
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-/* -------------------------------
-   FIX HERO OVERLAP ON MOBILE
--------------------------------- */
-@media (max-width: 768px) {
-  .hero {
-    padding-left: 20px;
-    padding-right: 20px;
-    text-align: center;
-  }
-
-  .hero-content {
-    align-items: center;
-  }
-}
-
-/* -------------------------------
-   FIX THEME TOGGLE FLOAT ISSUE
--------------------------------- */
+/* ---------- THEME TOGGLE (STOP FLOATING) ---------- */
 @media (max-width: 768px) {
   .theme-toggle {
     position: fixed;
-    top: 14px;
-    right: 14px;
-    transform: none !important;
+    top: 16px;
+    right: 16px;
     z-index: 3000;
+    transform: none !important;
   }
-}
-
-/* -------------------------------
-   CERTIFICATE / PROJECT / INTERNSHIP
-   HOVER LIFT (MATCH RESUME PHYSICS)
--------------------------------- */
-.cert-card,
-.project-card,
-.intern-card {
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-.cert-card:hover,
-.project-card:hover,
-.intern-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 45px rgba(168,85,247,0.45);
-}
-
-/* -------------------------------
-   SPACING BETWEEN TEXT & BUTTONS
--------------------------------- */
-.cert-card .issuer,
-.intern-card .desc,
-.project-card p {
-  margin-bottom: 20px;
-}
-
-/* -------------------------------
-   MOBILE SAFE AREA (ANDROID + iOS)
--------------------------------- */
-body {
-  overflow-x: hidden;
 }
