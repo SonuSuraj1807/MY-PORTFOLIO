@@ -312,7 +312,7 @@ body.light .side-nav a.active {
 
 .hero-wrapper {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1024px;
   margin: auto;
   display: grid;
   grid-template-columns: 1.2fr 1fr;
