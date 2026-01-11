@@ -92,6 +92,15 @@ body {
   transition: 0.3s;
 }
 
+@media (max-width: 768px) {
+  .theme-toggle {
+    top: auto;
+    bottom: 90px;   /* stays above WhatsApp */
+    right: 18px;
+    z-index: 3000;
+  }
+}
+
 #theme-toggle:hover {
   background: var(--accent);
   color: #fff;
@@ -238,15 +247,6 @@ body.light .side-nav a {
 body.light .side-nav a:hover,
 body.light .side-nav a.active {
   color: #fff;
-}
-
-/* =========================
-   MOBILE HIDE
-========================= */
-@media (max-width: 900px) {
-  .side-nav {
-    display: none;
-  }
 }
 
 /* =========================
@@ -1058,10 +1058,10 @@ button:focus-visible {
 
 .whatsapp-float {
   position: fixed;
-  bottom: 30px;
-  left: 30px;
-  width: 54px;
-  height: 54px;
+  bottom: 20px;
+  left: 16px;
+  width: 52px;
+  height: 52px;
   background: #25D366;
   border-radius: 50%;
   color: white;
