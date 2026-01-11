@@ -102,11 +102,11 @@ body {
   transition: 0.3s;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .theme-toggle {
     top: auto;
     bottom: 90px;   /* stays above WhatsApp */
-    right: 18px;
+    right: 12px;
     z-index: 3000;
   }
 }
