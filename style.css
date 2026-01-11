@@ -80,7 +80,7 @@ body {
 .main-content,
 .hero,
 .section {
-  padding-right: 180px; /* space for side-nav */
+  padding-right: 10px; /* space for side-nav */
 }
 
 
@@ -294,9 +294,7 @@ body.light .side-nav a.active {
    SECTION BASE
 ====================================================== */
 .section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
+  padding: 120px 0;
 }
 
 .container {
@@ -981,7 +979,7 @@ button:focus-visible {
 }
 /* =========================
    SECTION DIVIDER
-========================= */
+========================= 
 
 .section::after {
   content: "";
@@ -997,7 +995,7 @@ button:focus-visible {
     rgba(168,85,247,0.4),
     transparent
   );
-}
+}*/
 
 /* =========================
    CONTACT FORM HOVER FIX (FORCED)
@@ -1164,6 +1162,10 @@ body.light .intern-card .desc {
     opacity 0.7s ease,
     transform 0.7s ease;
 }
+.fade-up.visible.cert-card {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
 /* =========================
    CONNECT WITH ME LABEL
 ========================= */
@@ -1314,17 +1316,6 @@ body.light .intern-icons i {
   transform: translateY(-2px);
 }
 
-/* FADE-UP */
-.cert-card.fade-up {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.cert-card.fade-up.visible {
-  opacity: 1;
-  transform: translateY(1);
-}
 
 /* MODAL */
 .cert-modal {
@@ -1481,112 +1472,48 @@ html {
     line-height: 1.6;
   }
 }
-/* ======================================
-   FINAL LAYOUT OVERRIDES (DO NOT MOVE)
-====================================== */
+/* ==========================================
+   SECTION SPACING — SAFE & STABLE
+========================================== */
 
-/* Protect content from side-nav */
-.section,
-.hero,
-.main-content {
-  padding-right: 180px;
-  box-sizing: border-box;
+section {
+  margin-bottom: 0px;
 }
 
-/* TRUE CENTERING FIX */
-.section > .container,
-.hero > .container {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Center all grids & wrappers */
-.cert-grid,
-.project-grid,
-.internship-wrapper,
-.education-wrapper {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* MOBILE RESET */
-@media (max-width: 900px) {
-  .side-nav {
-    display: none;
-  }
-
-  .section,
-  .hero,
-  .main-content {
-    padding-right: 0;
-  }
-}
-@media (min-width: 1025px) {
-  .section,
-  .container {
-    padding-right: 140px; /* space for side-nav */
-  }
-}
 @media (max-width: 768px) {
-  .theme-toggle {
-    top: 14px;
-    right: 14px;
-    transform: none;
+  section {
+    margin-bottom: 90px;
   }
 }
-.section {
+/* ==========================================
+   SECTION DIVIDER — STABLE & CENTERED
+========================================== */
+
+.section-divider {
+  width: 100%;
   display: flex;
   justify-content: center;
+  margin: 80px 0;
 }
 
-.section > .container {
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
-}
-/* =====================================================
-   FINAL SAFE RESPONSIVE FIX (NAV + MOBILE)
-   ✔ No layout break
-   ✔ No card shifting
-===================================================== */
-
-/* ---------- DESKTOP (keep side nav) ---------- */
-@media (min-width: 1025px) {
-  .side-nav {
-    right: 20px;
-    width: auto;
-  }
+.section-divider span {
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(168,85,247,0.45),
+    transparent
+  );
 }
 
-/* ---------- MOBILE & MOBILE DESKTOP VIEW ---------- */
-@media (max-width: 1024px) {
-
-  /* Hide side nav ONLY on mobile */
-  .side-nav {
-    display: none !important;
-  }
-
-  /* Prevent content overflow */
-  body {
-    overflow-x: hidden;
-  }
-
-  /* Keep everything centered */
-  .container,
-  .section {
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-/* ---------- THEME TOGGLE (STOP FLOATING) ---------- */
+/* Mobile spacing */
 @media (max-width: 768px) {
-  .theme-toggle {
-    position: fixed;
-    top: 16px;
-    right: 16px;
-    z-index: 3000;
-    transform: none !important;
+  .section-divider {
+    margin: 70px 0 55px;
+  }
+
+  .section-divider span {
+    width: 80%;
   }
 }
