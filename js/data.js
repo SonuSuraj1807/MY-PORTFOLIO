@@ -167,17 +167,18 @@ window.portfolioData = {
             issueDate: "Issued June 2024"
         },
         {
-            title: "Python for Data Science",
-            image: "certificates/python_preview.jpg",
-            pdf: "certificates/python_ibm.pdf",
-            issuer: "NPTEL",
-            issueDate: "Issued Sep 2024"
+            title: "Data Engineering Virtual Internship",
+            image: "certificates/AWS-1.png",
+            pdf: "certificates/AWS.pdf",
+            issuer: "AICTE - EduSkills (AWS Academy)",
+            issueDate: "Issued March 2025"
         },
         {
-            title: "Joy of Computing using Python",
-            image: "certificates/python_preview.jpg",
-            issuer: "NPTEL",
-            issueDate: "Issued Sep 2024"
+            title: "Data Science Master Virtual Internship",
+            image: "certificates/Altair-1.png",
+            pdf: "certificates/Altair.pdf",
+            issuer: "AICTE - EduSkills (ALTAIR)",
+            issueDate: "Issued December 2024"
         }
 
     ]
